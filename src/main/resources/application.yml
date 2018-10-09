@@ -1,6 +1,6 @@
 micronaut:
     application:
-        name: micronaut
+        name: example-micronaut
                 
 #Uncomment to set server port
 #    server:

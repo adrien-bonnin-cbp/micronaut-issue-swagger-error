@@ -1,4 +1,4 @@
-package example
+package example.micronaut
 
 import com.fasterxml.jackson.core.JsonParseException
 import io.micronaut.http.HttpRequest

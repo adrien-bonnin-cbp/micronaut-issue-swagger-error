@@ -1,1 +1,0 @@
-# micronaut-issue-swagger-error

@@ -7,7 +7,7 @@ apply plugin:"application"
 apply plugin:"groovy"
 
 version "0.1"
-group "example"
+group "example.micronaut"
 
 repositories {
     mavenLocal()
@@ -22,20 +22,18 @@ dependencyManagement {
 }
 
 dependencies {
+    implementation "io.swagger.core.v3:swagger-annotations"
     implementation "io.micronaut:http-client"
     implementation "io.micronaut:http-server-netty"
     implementation "io.micronaut:runtime-groovy"
     implementation "io.micronaut:validation"
+    compileOnly "io.micronaut.configuration:openapi"
     compileOnly "io.micronaut:inject-groovy"
     runtimeOnly "ch.qos.logback:logback-classic:1.2.3"
-    testImplementation "io.micronaut:inject-groovy"
     testImplementation("org.spockframework:spock-core:1.2-groovy-2.4") {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
     }
-
-    // https://docs.micronaut.io/latest/guide/index.html#openapi
-    compileOnly "io.micronaut.configuration:openapi"
-    compile "io.swagger.core.v3:swagger-annotations"
+    testImplementation "io.micronaut:inject-groovy"
 }
 
 shadowJar {
@@ -44,4 +42,4 @@ shadowJar {
 
 run.jvmArgs('-noverify', '-XX:TieredStopAtLevel=1')
 
-mainClassName = "example.Application"
+mainClassName = "example.micronaut.Application"
